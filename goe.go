@@ -8,7 +8,7 @@ func BoolOrDefault(value bool, defaultValue bool) bool {
 	return value
 }
 
-func BoolOrFunc(value bool, defaultFunc func() (bool, error)) (bool, error) {
+func BoolOrElse(value bool, defaultFunc func() (bool, error)) (bool, error) {
 	if !value {
 		return defaultFunc()
 	}
@@ -24,7 +24,7 @@ func IntOrDefault(value int, defaultValue int) int {
 	return value
 }
 
-func IntOrFunc(value int, defaultFunc func() (int, error)) (int, error) {
+func IntOrElse(value int, defaultFunc func() (int, error)) (int, error) {
 	if value == 0 {
 		return defaultFunc()
 	}
@@ -40,7 +40,7 @@ func UintOrDefault(value uint, defaultValue uint) uint {
 	return value
 }
 
-func UintOrFunc(value uint, defaultFunc func() (uint, error)) (uint, error) {
+func UintOrElse(value uint, defaultFunc func() (uint, error)) (uint, error) {
 	if value == 0 {
 		return defaultFunc()
 	}
@@ -56,7 +56,7 @@ func Float32OrDefault(value float32, defaultValue float32) float32 {
 	return value
 }
 
-func Float32OrFunc(value float32, defaultFunc func() (float32, error)) (float32, error) {
+func Float32OrElse(value float32, defaultFunc func() (float32, error)) (float32, error) {
 	if value == 0 {
 		return defaultFunc()
 	}
@@ -72,7 +72,7 @@ func Float64OrDefault(value float64, defaultValue float64) float64 {
 	return value
 }
 
-func Float64OrFunc(value float64, defaultFunc func() (float64, error)) (float64, error) {
+func Float64OrElse(value float64, defaultFunc func() (float64, error)) (float64, error) {
 	if value == 0 {
 		return defaultFunc()
 	}
@@ -88,7 +88,7 @@ func StringOrDefault(value string, defaultValue string) string {
 	return value
 }
 
-func StringOrFunc(value string, defaultFunc func() (string, error)) (string, error) {
+func StringOrElse(value string, defaultFunc func() (string, error)) (string, error) {
 	if value == "" {
 		return defaultFunc()
 	}
@@ -104,7 +104,7 @@ func BytesOrDefault(value []byte, defaultValue []byte) []byte {
 	return value
 }
 
-func BytesOrFunc(value []byte, defaultFunc func() ([]byte, error)) ([]byte, error) {
+func BytesOrElse(value []byte, defaultFunc func() ([]byte, error)) ([]byte, error) {
 	if value == nil {
 		return defaultFunc()
 	}
